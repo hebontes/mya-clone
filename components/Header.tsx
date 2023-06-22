@@ -4,7 +4,7 @@ import Image from "next/image"
 const Header = () => {
   return (
     <div className="h-20 bg-white py-4">
-      <div className="max-w-5xl w-full mx-auto">
+      <div className="max-w-container w-full mx-auto">
         <Image src="/img/logo.svg" alt="myauto logo" width={164} height={46} />
       </div>
     </div>

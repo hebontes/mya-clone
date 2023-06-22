@@ -17,6 +17,9 @@ module.exports = {
         "black-600": '#6F7383',
         primaryOrange: '#FD4100',
       },
+      maxWidth: {
+        'container': '1050px',
+      }
     },
   },
   plugins: [],
