@@ -15,10 +15,16 @@ module.exports = {
       },
       colors: {
         "black-600": '#6F7383',
+        "gray-100": "#E9E9F0",
+        "gray-200": "#E2E5EB",
+        whiteMuted: "#F9F9FB",
         primaryOrange: '#FD4100',
       },
       maxWidth: {
         'container': '1050px',
+      },
+      boxShadow: {
+        'filterBox': '0px 4px 16px 0px rgba(164, 174, 193, 0.10)'
       }
     },
   },

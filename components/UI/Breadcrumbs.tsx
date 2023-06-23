@@ -1,4 +1,3 @@
-import React from "react"
 import { cx } from "@/utils/cx"
 import Link from "next/link"
 
