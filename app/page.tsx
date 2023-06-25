@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <main className="max-w-container min-h-screen mx-auto ">
       <Breadcrumbs />
-      <div className="grid grid-cols-12 ">
-        {/* Using gap-5 didn't give pixel perfect results */}
 
+      {/* Using gap-5 didn't give pixel perfect results, so I had to go with exact pixel numbers */}
+      <div className="grid grid-cols-12 ">
         <div className="col-span-3 mr-[12.5px]">
           <FilterSidebar />
         </div>

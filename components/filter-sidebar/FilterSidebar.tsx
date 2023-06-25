@@ -5,7 +5,7 @@ import FilterForm from "./FilterForm"
 
 const FilterSidebar = () => {
   return (
-    <div className="rounded-t-xl bg-white border border-gray-200 shadow-filterBox">
+    <div className="rounded-t-xl bg-white outline outline-gray-200 shadow-filterBox">
       <VehicleFilters />
       <FilterForm />
     </div>

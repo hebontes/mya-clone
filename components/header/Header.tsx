@@ -6,7 +6,7 @@ const Header = () => {
       <div className="max-w-container w-full mx-auto">
         <Image
           className="select-none"
-          src="/img/logo.svg"
+          src="/logo.svg"
           alt="myauto-logo"
           width={164}
           height={46}

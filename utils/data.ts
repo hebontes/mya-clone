@@ -1,24 +1,22 @@
 export interface vehichleOptionsTypes {
   id?: number
-  img: string
+  src: string
   alt: string
-  active?: boolean
 }
 export const vehichleOptions: vehichleOptionsTypes[] = [
   {
     id: 1,
-    img: "/img/car.svg",
+    src: "/icons/car",
     alt: "car",
-    active: true,
   },
   {
-    id: 1,
-    img: "/img/tractor.svg",
+    id: 2,
+    src: "/icons/tractor",
     alt: "tractor",
   },
   {
-    id: 1,
-    img: "/img/moto.svg",
+    id: 3,
+    src: "/icons/moto",
     alt: "moto",
   },
 ]
