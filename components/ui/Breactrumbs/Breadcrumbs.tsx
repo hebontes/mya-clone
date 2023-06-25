@@ -2,12 +2,14 @@ import { cx } from "@/utils/cx"
 import Link from "next/link"
 
 const Breadcrumbs = () => {
-  const pageData = ["მთავარი", "ძიება", "იყიდება"]
+  // Last one is considered active (current page)
+  const visitedPages = ["მთავარი", "ძიება", "იყიდება"]
 
   return (
     <div className="mt-8 mb-5 text-xs text-black-600">
-      {pageData.map((page, idx) => {
-        const isLast = idx === pageData.length - 1
+      {visitedPages.map((page, idx) => {
+        const isLast = idx === visitedPages.length - 1
+
         return (
           <>
             <Link

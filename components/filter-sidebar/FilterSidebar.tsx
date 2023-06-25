@@ -1,12 +1,13 @@
-import FilterTab from "./VehicleFilter"
+import FilterTab from "./VehicleFilterItem"
 import { vehichleOptions } from "@/utils/data"
-import VehicleFilters from "./VehicleFilters"
+import VehicleFilters from "./VehicleFilterList"
+import FilterForm from "./FilterForm"
 
 const FilterSidebar = () => {
   return (
-    <div className="rounded-t-xl overflow-hidden border border-gray-200 shadow-filterBox">
+    <div className="rounded-t-xl bg-white border border-gray-200 shadow-filterBox">
       <VehicleFilters />
-      <div></div>
+      <FilterForm />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import FilterSidebar from "@/components/filter-sidebar/FilterSidebar"
-import Breadcrumbs from "@/components/ui/Breadcrumbs"
+import Breadcrumbs from "@/components/ui/Breactrumbs/Breadcrumbs"
 import Image from "next/image"
 
 export default function Home() {

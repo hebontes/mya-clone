@@ -2,7 +2,7 @@ import { cx } from "@/utils/cx"
 import { vehichleOptionsTypes } from "@/utils/data"
 import Image from "next/image"
 
-export default function VehicleFilter({
+export default function VehicleFilterItem({
   alt,
   img,
   active,
