@@ -14,8 +14,10 @@ const FilterForm = () => {
             { label: "ქირავდება", value: 1 },
           ]}
         />
-
+        {/* https://static.my.ge/myauto/js/mans.json */}
         <SelectBox boxtitle={"მწარმოებელი"} options={["any"]} />
+
+        {/* https://api2.myauto.ge/ka/cats/get */}
         <SelectBox boxtitle={"კატეგორია"} options={["any"]} />
       </div>
       <div className="pt-4 px-6 pb-11 border-t border-gray-100">
