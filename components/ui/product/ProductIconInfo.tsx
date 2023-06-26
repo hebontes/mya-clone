@@ -9,7 +9,7 @@ interface Props {
 }
 const ProductIconInfo = ({ text, src }: Props) => {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 w-48">
       <img src={src} />
       <div className="text-black-900 text-xs tracking-wide	 font-light	">
         {text}

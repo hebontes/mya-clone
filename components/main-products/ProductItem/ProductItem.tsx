@@ -24,7 +24,7 @@ const MainProductItem = ({ product }: Props) => {
         className="rounded-lg shrink-0"
       />
 
-      <div id="description" className="w-full">
+      <div id="description" className="w-full flex flex-col">
         <div className="flex justify-between items-center">
           <Suspense fallback={<ManLoader />}>
             <ProductMan product={product} />
