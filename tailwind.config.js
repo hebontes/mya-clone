@@ -9,16 +9,24 @@ module.exports = {
 
     extend: {
       fontSize: {
-        'sx': '0.8125rem' // 13px
+        'sx': '0.8125rem', // 13px
+        'xx': '0.6875rem' // 11 px
+
       },
       colors: {
         "black-500": '#8C929B',
         "black-600": '#6F7383',
         "black-800": '#272A37',
+        "black-900": '#1B1D25',
         "gray-50": "#F2F3F6",
         "gray-100": "#E9E9F0",
         "gray-200": "#E2E5EB",
         "gray-300": "#D8DBE2",
+        "green-50": "#F0F9F7",
+        "green-150": "#CEE8E5",
+        "green-200": "#59D8C9",
+        "green-300": "#26B753",
+        "red-800": "#FF3B30",
         whiteMuted: "#F9F9FB",
         primaryOrange: '#FD4100',
       },
