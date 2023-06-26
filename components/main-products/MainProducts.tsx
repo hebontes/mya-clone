@@ -2,6 +2,7 @@ import { cx } from "@/utils/cx"
 import { Meta } from "@/utils/data"
 import React from "react"
 import MainProductItem from "./ProductItem/ProductItem"
+import ProductStickers from "./ProductItem/ProductStickers"
 
 async function getProducts() {
   const res = await fetch("https://api2.myauto.ge/ka/products/", {
@@ -28,13 +29,14 @@ const MainProducts = async () => {
         <div
           key={product.car_id}
           className={cx(
-            "rounded-[14px] mb-2.5",
+            "rounded-[14px] mb-2.5 overflow-hidden",
             product.stickers
               ? "bg-green-50 border border-green-200"
               : "bg-white"
           )}
         >
           <MainProductItem product={product} />
+          {product.stickers && <ProductStickers />}
         </div>
       )
     })

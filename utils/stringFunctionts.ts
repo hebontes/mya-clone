@@ -54,9 +54,11 @@ export const getLocation = (location_id: number) => {
     case 15:
       return "რუსთავი"
     case 30:
-      return "რუსთავის ავტ. ბაზრობა"
+      return "რუსთავის ავტo."
     case 23:
       return "გზაში საქ.-სკენ"
+    case 59:
+      return "მარნეული"
     default:
       return "საქართველო"
   }
