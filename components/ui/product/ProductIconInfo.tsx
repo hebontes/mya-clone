@@ -11,7 +11,9 @@ const ProductIconInfo = ({ text, src }: Props) => {
   return (
     <div className="flex items-center gap-3">
       <img src={src} />
-      <div className="text-black-900 text-sm">{text}</div>
+      <div className="text-black-900 text-xs tracking-wide	 font-light	">
+        {text}
+      </div>
     </div>
   )
 }

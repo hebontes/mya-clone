@@ -1,5 +1,6 @@
 export const convertNumberToEngine = (number: number) => {
-  return number.toString().slice(0, 1) + "." + number.toString().slice(1, 2)
+  const result = (number / 1000).toFixed(1)
+  return result
 }
 
 export const getGearType = (gear_type_id: number) => {
@@ -37,5 +38,26 @@ export const getFuelType = (fuel_type_id: number) => {
       return "წყალბადი"
     default:
       return "ბენზინი"
+  }
+}
+
+export const getLocation = (location_id: number) => {
+  switch (location_id) {
+    case 2:
+      return "თბილისი"
+    case 3:
+      return "ქუთაისი"
+    case 4:
+      return "ბათუმი"
+    case 7:
+      return "ფოთი"
+    case 15:
+      return "რუსთავი"
+    case 30:
+      return "რუსთავის ავტ. ბაზრობა"
+    case 23:
+      return "გზაში საქ.-სკენ"
+    default:
+      return "საქართველო"
   }
 }
