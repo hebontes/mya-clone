@@ -1,17 +1,17 @@
-import React, { Suspense } from "react"
+import { Suspense } from "react"
 import Image from "next/image"
 
 import ProductMan from "./ProductMan"
 import ManLoader from "@/components/ui/loading/ManLoader"
-import ProductLocation from "./ProductLocation"
-import ProductIsGanbajebuli from "./ProductIsGanbajebuli"
+import ProductLocation from "../../ui/product/ProductLocation"
+import ProductIsGanbajebuli from "../../ui/product/ProductIsGanbajebuli"
 import ProductInfo from "./ProductInfo"
 
 interface Props {
   product: any
 }
 
-const MainProductItem = ({ product }: Props) => {
+const ProductItem = ({ product }: Props) => {
   return (
     // <Suspense fallback={<CardLoader />}>
     <div className="p-4 flex gap-4">
@@ -43,4 +43,4 @@ const MainProductItem = ({ product }: Props) => {
   )
 }
 
-export default MainProductItem
+export default ProductItem

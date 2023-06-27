@@ -1,5 +1,3 @@
-import React from "react"
-
 const ProductStickers = () => {
   return (
     <div className="leading-none border-t border-green-150 flex gap-2 bg-green-50 px-4 py-2.5">

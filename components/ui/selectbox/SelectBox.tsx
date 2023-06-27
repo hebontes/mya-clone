@@ -37,8 +37,8 @@ const people = [
   { name: "Hellen Schmidt" },
 ]
 
-const SelectBox = ({ boxtitle, placeholder, options }: Props) => {
-  const [selected, setSelected] = useState(people[0])
+const SelectBox = ({ boxtitle, placeholder, options = people }: Props) => {
+  const [selected, setSelected] = useState(options[0])
 
   return (
     <div className="w-full relative leading-none">
@@ -63,7 +63,7 @@ const SelectBox = ({ boxtitle, placeholder, options }: Props) => {
           enterTo="opacity-100"
         >
           <Listbox.Options className="absolute z-10 mt-1 w-full overflow-auto rounded-lg bg-white py-1 text-base shadow-selectBox ring-1 ring-gray-200 focus:outline-none sm:text-sm">
-            {people.map((person, idx) => (
+            {options.map((person, idx) => (
               <Listbox.Option
                 key={idx}
                 className={({ active }) =>

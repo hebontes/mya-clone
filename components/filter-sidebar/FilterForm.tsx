@@ -1,9 +1,9 @@
-import React from "react"
 import SelectBox from "../ui/selectbox/SelectBox"
 import PrimaryButton from "../ui/button/PrimaryButton"
 import CurrencyButton from "../ui/button/CurrencyButton"
+import ForRent from "../ui/selectbox/ForRent"
 
-const FilterForm = () => {
+const FilterForm = ({ setSearch }: any) => {
   return (
     <form>
       <div className="p-6 pt-[22px] flex flex-col gap-5">
@@ -14,6 +14,9 @@ const FilterForm = () => {
             { label: "ქირავდება", value: 1 },
           ]}
         />
+
+        <ForRent />
+
         {/* https://static.my.ge/myauto/js/mans.json */}
         <SelectBox boxtitle={"მწარმოებელი"} options={["any"]} />
 

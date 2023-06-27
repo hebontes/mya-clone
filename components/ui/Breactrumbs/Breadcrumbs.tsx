@@ -11,16 +11,15 @@ const Breadcrumbs = () => {
         const isLast = idx === visitedPages.length - 1
 
         return (
-          <>
+          <div className="inline-block" key={page}>
             <Link
               href="#"
-              key={idx}
               className={cx("cursor-pointer", isLast && "text-primaryOrange")}
             >
               {page}
             </Link>
             {!isLast && <span className="mx-1">{">"}</span>}
-          </>
+          </div>
         )
       })}
     </div>

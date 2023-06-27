@@ -1,3 +1,5 @@
+import moment from "moment"
+
 export const convertNumberToEngine = (number: number) => {
   const result = (number / 1000).toFixed(1)
   return result
@@ -54,7 +56,7 @@ export const getLocation = (location_id: number) => {
     case 15:
       return "რუსთავი"
     case 30:
-      return "რუსთავის ავტo."
+      return "რუსთავის ავტო."
     case 23:
       return "გზაში საქ.-სკენ"
     case 59:
@@ -62,4 +64,28 @@ export const getLocation = (location_id: number) => {
     default:
       return "საქართველო"
   }
+}
+
+export const getRecentlyDate = (date: string) => {
+  const currentDate = moment()
+  const diff = moment(date).diff(currentDate)
+  const duration = moment.duration(diff)
+  const minutes = Math.abs(duration.asMinutes())
+  const hours = Math.abs(duration.asHours())
+  const days = Math.abs(duration.asDays())
+  const months = Math.abs(duration.asMonths())
+
+  if (minutes < 60) {
+    return `${Math.round(minutes)} წუთის წინ`
+  }
+  if (hours < 24) {
+    return `${Math.round(hours)} საათის წინ`
+  }
+  if (days < 30) {
+    return `${Math.round(days)} დღის წინ`
+  }
+  if (months < 12) {
+    return `${Math.round(months)} თვის წინ`
+  }
+  return `${Math.round(months / 12)} წლის წინ`
 }

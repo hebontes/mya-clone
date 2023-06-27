@@ -1,4 +1,3 @@
-import React from "react"
 import { mansJsonData } from "@/utils/data"
 
 async function getAllManufacturers() {
@@ -38,7 +37,8 @@ const ProductMan = async ({ product }: { product: any }) => {
   return (
     <div className="flex gap-2 items-center text-sm">
       <div className=" text-black-800 font-medium">
-        {currentMan.man_name} {currentModel.model_name}
+        {currentMan && currentMan.man_name}{" "}
+        {currentModel && currentModel.model_name}
       </div>
       <div className="text-black-500">{product.prod_year} წ</div>
     </div>

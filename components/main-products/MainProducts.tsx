@@ -1,8 +1,7 @@
 import { cx } from "@/utils/cx"
 import { Meta } from "@/utils/data"
-import React from "react"
-import MainProductItem from "./ProductItem/ProductItem"
-import ProductStickers from "./ProductItem/ProductStickers"
+import ProductStickers from "../ui/product/ProductStickers"
+import ProductItem from "./ProductItem/ProductItem"
 
 async function getProducts() {
   const res = await fetch("https://api2.myauto.ge/ka/products/", {
@@ -17,7 +16,7 @@ async function getProducts() {
   return response.data
 }
 
-const MainProducts = async () => {
+const MainProducts = async ({ setSearch }: any) => {
   const data = await getProducts()
 
   const products = data.items || []
@@ -35,7 +34,7 @@ const MainProducts = async () => {
               : "bg-white"
           )}
         >
-          <MainProductItem product={product} />
+          <ProductItem product={product} />
           {product.stickers && <ProductStickers />}
         </div>
       )

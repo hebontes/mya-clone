@@ -1,5 +1,4 @@
 import { getLocation } from "@/utils/stringFunctionts"
-import React from "react"
 
 const ProductLocation = ({ location_id }: { location_id: number }) => {
   return (
