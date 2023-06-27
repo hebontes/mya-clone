@@ -6,7 +6,7 @@ const Breadcrumbs = () => {
   const visitedPages = ["მთავარი", "ძიება", "იყიდება"]
 
   return (
-    <div className="mt-8 mb-5 text-xs text-black-600">
+    <div className="mt-8 mb-5 ml-5 md:ml-0 text-xs text-black-600">
       {visitedPages.map((page, idx) => {
         const isLast = idx === visitedPages.length - 1
 

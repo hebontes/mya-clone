@@ -36,10 +36,10 @@ export default async function Home({ searchParams }: any) {
       {/* Using gap-5 didn't give pixel perfect results, so I had to go with exact pixel numbers */}
       {/* <SearchContext.Provider value={searchProps}> */}
       <div className="grid grid-cols-12 ">
-        <div className="col-span-3 mr-[12.5px]">
+        <div className="hidden md:block col-span-3 mr-[12.5px]">
           <FilterSidebar />
         </div>
-        <div className="col-span-9 ml-[7.5px]">
+        <div className="col-span-12 md:col-span-9 md:ml-[7.5px]">
           <MainProducts data={data} />
         </div>
       </div>

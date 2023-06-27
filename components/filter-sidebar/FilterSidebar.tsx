@@ -4,6 +4,7 @@ import CurrencyButton from "../ui/button/CurrencyButton"
 import PrimaryButton from "../ui/button/PrimaryButton"
 import { ForRentOptions } from "@/utils/selectBoxDataTypes"
 import { getAllManufacturers, getCats } from "@/server/server"
+import ClearFiltersButton from "../ui/button/ClearFiltersButton"
 
 const FilterSidebar = async ({ setSearch }: any) => {
   const cats = await getCats()

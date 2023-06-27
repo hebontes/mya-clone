@@ -16,8 +16,11 @@ module.exports = {
       colors: {
         "black-500": '#8C929B',
         "black-600": '#6F7383',
+        "black-700": '#454857',
+
         "black-800": '#272A37',
         "black-900": '#1B1D25',
+        "gray-20": '#E4E7EB',
         "gray-50": "#F2F3F6",
         "gray-100": "#E9E9F0",
         "gray-200": "#E2E5EB",
@@ -26,6 +29,8 @@ module.exports = {
         "green-150": "#CEE8E5",
         "green-200": "#59D8C9",
         "green-300": "#26B753",
+        "green-800": "#1EB676",
+        "red-100": "#FFE3E3",
         "red-800": "#FF3B30",
         whiteMuted: "#F9F9FB",
         primaryOrange: '#FD4100',

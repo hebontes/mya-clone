@@ -10,8 +10,8 @@ const MainProducts = async ({ data }: any) => {
   const meta: Meta = data.meta
 
   return (
-    <div>
-      <div className="flex items-center justify-between">
+    <div className="md:bg-transparent bg-white">
+      <div className="hidden md:flex items-center justify-between ">
         <div className="text-black-800">{meta.total} განცხადება</div>
         <div className="gap-2 flex items-center">
           <SelectBox

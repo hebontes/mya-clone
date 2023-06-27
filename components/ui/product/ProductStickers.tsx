@@ -1,8 +1,8 @@
 const ProductStickers = () => {
   return (
-    <div className="leading-none border-t border-green-150 flex gap-2 bg-green-50 px-4 py-2.5">
+    <div className="text-xx md:text-xs leading-none border-t border-green-150 flex flex-wrap gap-2 bg-green-50 px-4 py-2.5">
       <div
-        className="flex items-center gap-1 text-xs rounded-full bg-white"
+        className="flex items-center gap-1 rounded-full bg-white"
         style={{ padding: "5px 8px 5px 6px" }}
       >
         <img src="/icons/perfect.svg" alt="checkmark" />
@@ -10,7 +10,7 @@ const ProductStickers = () => {
       </div>
 
       <div
-        className="flex items-center gap-1 text-xs rounded-full bg-white"
+        className="flex items-center gap-1 rounded-full bg-white"
         style={{ padding: "5px 8px 5px 6px" }}
       >
         <img src="/icons/urgent.svg" alt="checkmark" />
@@ -18,7 +18,7 @@ const ProductStickers = () => {
       </div>
 
       <div
-        className="flex items-center gap-1 text-xs rounded-full bg-white"
+        className="flex items-center gap-1 rounded-full bg-white"
         style={{ padding: "5px 8px 5px 6px" }}
       >
         <img src="/icons/history.svg" alt="checkmark" />

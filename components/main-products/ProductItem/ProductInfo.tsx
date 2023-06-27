@@ -1,4 +1,5 @@
 import ProductIconInfo from "@/components/ui/product/ProductIconInfo"
+import ProductPrice from "@/components/ui/product/ProductPrice"
 import {
   convertNumberToEngine,
   getGearType,
@@ -22,19 +23,8 @@ const ProductInfo = ({ product }: any) => {
             src="/icons/speed.svg"
           />
         </div>
-
-        <div id="product_price " className="ml-auto">
-          {product.price_value === 0 ? (
-            <span className="text-black-800 text-sm">ფასი შეთანხმებით</span>
-          ) : (
-            <div className="flex items-center gap-1">
-              <div className="text-black-800 text-xl">
-                {" "}
-                {product.price_value.toLocaleString()}
-              </div>
-              <img src="/icons/valute.svg" alt="lari-valute" />
-            </div>
-          )}
+        <div className="ml-auto">
+          <ProductPrice price_value={product.price_value} />
         </div>
       </div>
       <div className="flex gap-8 items-center mb-auto">
