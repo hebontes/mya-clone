@@ -1,13 +1,14 @@
-import FilterTab from "./VehicleFilterItem"
-import { vehichleOptions } from "@/utils/data"
 import VehicleFilters from "./VehicleFilterList"
-import FilterForm from "./FilterForm"
 import SelectBox from "../ui/selectbox/SelectBox"
-import ForRent from "../ui/selectbox/ForRent"
 import CurrencyButton from "../ui/button/CurrencyButton"
 import PrimaryButton from "../ui/button/PrimaryButton"
+import { ForRentOptions } from "@/utils/selectBoxDataTypes"
+import { getAllManufacturers, getCats } from "@/server/server"
 
-const FilterSidebar = ({ setSearch }: any) => {
+const FilterSidebar = async ({ setSearch }: any) => {
+  const cats = await getCats()
+  const mans = await getAllManufacturers()
+
   return (
     <div className="rounded-t-xl bg-white outline outline-gray-200 shadow-filterBox">
       <VehicleFilters />
@@ -15,19 +16,36 @@ const FilterSidebar = ({ setSearch }: any) => {
         <div className="p-6 pt-[22px] flex flex-col gap-5">
           <SelectBox
             boxtitle={"გარიგების ტიპი"}
-            options={[
-              { label: "იყიდება", value: 0 },
-              { label: "ქირავდება", value: 1 },
-            ]}
+            options={ForRentOptions}
+            param="ForRent"
           />
 
-          <ForRent setSearch={setSearch} />
-
           {/* https://static.my.ge/myauto/js/mans.json */}
-          <SelectBox boxtitle={"მწარმოებელი"} options={["any"]} />
-
+          {mans && (
+            <SelectBox
+              param="Mans"
+              defaultTitle="მწარმოებელი"
+              boxtitle="მწარმოებელი"
+              options={mans.map((man: any) => {
+                if (man.man_id && man.man_name) {
+                  return { value: man.man_id, label: man.man_name }
+                }
+              })}
+            />
+          )}
           {/* https://api2.myauto.ge/ka/cats/get */}
-          <SelectBox boxtitle={"კატეგორია"} options={["any"]} />
+          {cats && (
+            <SelectBox
+              boxtitle="კატეგორია"
+              defaultTitle="კატეგორია"
+              param="Cats"
+              options={cats.map((cat: any) => {
+                if (cat.category_id && cat.title) {
+                  return { value: cat.category_id, label: cat.title }
+                }
+              })}
+            />
+          )}
         </div>
         <div className="pt-4 px-6 pb-11 border-t border-gray-100">
           <div className="flex items-center justify-between">

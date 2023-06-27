@@ -1,38 +1,20 @@
+import { getAllManufacturers, getModelByMan } from "@/server/server"
 import { mansJsonData } from "@/utils/data"
 
-async function getAllManufacturers() {
-  const res = await fetch("https://static.my.ge/myauto/js/mans.json")
-  const response = await res.json()
+const ProductMan = async ({ product }: any) => {
+  // Initiate both requests in parallel
+  const mansData = getAllManufacturers()
+  const modelsData = getModelByMan(product.man_id)
 
-  // simulate 10 seconds sleep
-  // await new Promise((resolve) => setTimeout(resolve, 10000))
+  // Wait for the promises to resolve
+  const [mans, models] = await Promise.all([mansData, modelsData])
 
-  if (!res.ok) throw new Error("Failed to fetch products")
-
-  return response
-}
-
-async function getModelByMan(man_id: string | number) {
-  const res = await fetch(
-    `https://api2.myauto.ge/ka/getManModels?man_id=${man_id}`
+  const currentMan = mans.find(
+    (man: any) => Number(man.man_id) === product.man_id
   )
-  const response = await res.json()
-
-  if (!res.ok) throw new Error("Failed to fetch products")
-
-  return response.data
-}
-
-const ProductMan = async ({ product }: { product: any }) => {
-  const mansApi = await getAllManufacturers()
-  const currentMan = mansApi.find((man: any) => {
-    return Number(man.man_id) === product.man_id
-  })
-
-  const modelsApi = await getModelByMan(product.man_id)
-  const currentModel = modelsApi.find((model: any) => {
-    return model.model_id === product.model_id
-  })
+  const currentModel = models.find(
+    (model: any) => model.model_id === product.model_id
+  )
 
   return (
     <div className="flex gap-2 items-center text-sm">

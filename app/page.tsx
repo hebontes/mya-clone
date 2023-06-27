@@ -1,8 +1,6 @@
 import FilterSidebar from "@/components/filter-sidebar/FilterSidebar"
 import MainProducts from "@/components/main-products/MainProducts"
 import Breadcrumbs from "@/components/ui/Breactrumbs/Breadcrumbs"
-import Image from "next/image"
-// import { createContext, useState } from "react"
 
 interface SearchProps {
   forRent: string
@@ -14,18 +12,22 @@ interface SearchProps {
   sortOrder: string
   page: number
 }
-export default function Home() {
-  // const SearchContext = createContext<null | SearchProps>(null)
-  // const [searchProps, setSearch] = useState<SearchProps>({
-  //   forRent: "1",
-  //   mans: "",
-  //   cats: "",
-  //   priceFrom: "",
-  //   priceTo: "",
-  //   period: "",
-  //   sortOrder: "",
-  //   page: 1,
-  // })
+
+export async function getProducts(params = "") {
+  console.log("🚀 ~ file: page.tsx:17 ~ getProducts ~ params:", params)
+  const res = await fetch(
+    "https://api2.myauto.ge/ka/products?" +
+      new URLSearchParams(params).toString()
+  )
+
+  const response = await res.json()
+
+  if (!res.ok) throw new Error("Failed to fetch products")
+  return response.data
+}
+
+export default async function Home({ searchParams }: any) {
+  const data = await getProducts(searchParams)
 
   return (
     <main className="max-w-container min-h-screen mx-auto ">
@@ -38,7 +40,7 @@ export default function Home() {
           <FilterSidebar />
         </div>
         <div className="col-span-9 ml-[7.5px]">
-          <MainProducts />
+          <MainProducts data={data} />
         </div>
       </div>
       {/* </SearchContext.Provider> */}
