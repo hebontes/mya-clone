@@ -34,9 +34,8 @@ const SelectBox = ({
     defaultTitle ? defaultTitle : options[0]
   )
 
+  const value = searchParams.get(param)
   useEffect(() => {
-    const value = searchParams.get(param)
-
     if (value) {
       const option = options.find((option) => {
         return option.value.toString() === value.toString()
@@ -44,8 +43,10 @@ const SelectBox = ({
       if (option) {
         setSelected(option)
       }
+    } else {
+      setSelected(defaultTitle ? defaultTitle : options[0])
     }
-  }, [])
+  }, [value])
 
   const onSelect = (param: string, value: string | undefined) => {
     const current = new URLSearchParams(Array.from(searchParams.entries())) // -> has to use this form

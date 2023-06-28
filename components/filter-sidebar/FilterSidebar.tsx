@@ -13,7 +13,7 @@ const FilterSidebar = async ({ setSearch }: any) => {
   return (
     <div className="rounded-t-xl bg-white outline outline-gray-200 shadow-filterBox">
       <VehicleFilters />
-      <form>
+      <div>
         <div className="p-6 pt-[22px] flex flex-col gap-5">
           <SelectBox
             boxtitle={"გარიგების ტიპი"}
@@ -69,7 +69,7 @@ const FilterSidebar = async ({ setSearch }: any) => {
         <div className="px-6 pt-4 pb-5 shadow-searchBox ">
           <PrimaryButton text="ძებნა 197,963" />
         </div>
-      </form>
+      </div>
     </div>
   )
 }
